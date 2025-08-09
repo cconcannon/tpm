@@ -15,11 +15,16 @@ Requirements: `tmux` version 1.9 (or higher), `git`, `bash`.
 Clone TPM:
 
 ```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/cconcannon/tpm {targetPath}
 ```
 
-Put this at the bottom of `~/.tmux.conf` (`$XDG_CONFIG_HOME/tmux/tmux.conf`
-works too):
+or clone somewhere else, then symlink:
+
+```bash
+ln -s /path/to/tpm ~/.config/tmux/plugins/tpm
+```
+
+Put this at the bottom of `~/.config/tmux/tmux.conf`:
 
 ```bash
 # List of plugins
@@ -33,7 +38,7 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 # set -g @plugin 'git@bitbucket.com:user/plugin'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
+run '~/.config/tmux/plugins/tpm/tpm'
 ```
 
 Reload TMUX environment so TPM is sourced:
